@@ -1,27 +1,13 @@
-public class Hero extends Character{
+public class Hero extends Character {
     private String weapon;
-    public Hero(String name,int hp,String weapon){
-        super(name,hp);
-    }
-    public void attack(Creature target){
-        System.out.println(getName()+"は"+weapon+"で攻撃！"+target.hp+"に10のダメージを与えた");
-        target.hp-=10;
+
+    public Hero(String name, int hp, String weapon) {
+        super(name, hp);
+        this.weapon = weapon;
     }
 
-    @Override
-    public String getName() {
-        return "";
+    public void attack(Creature target) {
+        System.out.println(getName() + "は" + weapon + "で攻撃！" + target.getName() + "に10のダメージを与えた");
+        target.getHp();
     }
-
-    @Override
-    public int getHp() {
-        return 0;
-    }
-
-    @Override
-    public void setHp() {
-
-    }
-
-    public getter
 }
