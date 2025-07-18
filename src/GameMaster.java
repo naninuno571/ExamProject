@@ -9,13 +9,17 @@ public class GameMaster {
         ArrayList<Character> party = new ArrayList<Character>();
         ArrayList<Monster> monster = new ArrayList<Monster>();
         party.add(new Hero("勇者",100,"剣"));
+        party.add(new Wizard("魔法使い",60,10));
+        party.add(new Thief("盗賊",70));
         monster.add(new Matango('A',45));
+        monster.add(new Goblin('A',50));
+        monster.add(new Slime('A',40));
+        System.out.println("---味方パーティ---");
         for(Character c : party){
-            System.out.println("---味方パーティ---");
             c.showStatus();
         }
+        System.out.println("---敵グループ---");
         for(Monster c2 : monster){
-            System.out.println("---敵グループ---");
             c2.showStatus();
         }
         for(Character c : party){
@@ -29,13 +33,29 @@ public class GameMaster {
                 c2.attack(c);
             }
         }
-        for(Character c : party){
-            System.out.println("---味方パーティの最終ステータス---");
-            c.showStatus();
-        }
+        SuperHero sh = new SuperHero(new Hero("勇者",100,"剣"));
         for(Monster c2 : monster){
-            System.out.println("---敵グループの最終ステータス---");
+            sh.attack(c2);
+        }
+        System.out.println("---味方パーティの最終ステータス---");
+        for(Character c : party){
+            c.showStatus();
+            System.out.print("生存状況:");
+            if(c.isAlive()){
+                System.out.println("生存");
+            }else{
+                System.out.println("死亡");
+            }
+        }
+        System.out.println("---敵グループの最終ステータス---");
+        for(Monster c2 : monster){
             c2.showStatus();
+            System.out.print("生存状況:");
+            if(c2.isAlive()){
+                System.out.println("生存");
+            }else{
+                System.out.println("討伐済み");
+            }
         }
     }
 }

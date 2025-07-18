@@ -16,8 +16,8 @@ public abstract class Monster implements Creature{
         System.out.println(getName()+":"+hp);
     }
     public char getSuffix(){return suffix;}
-    public void setter(){this.hp=hp;}
-    public int getter(){
+    public void setHp(int hp){if(hp <= 0){this.hp=0;}else{this.hp = hp;}}
+    public int getHp(){
         return hp;
     }
 
