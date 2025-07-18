@@ -10,5 +10,6 @@ public class Hero extends Character {
         System.out.println(getName() + "は" + weapon + "で攻撃！" + target.getName() + "に10のダメージを与えた");
         target.setHp(target.getHp()-10);
     }
+
     public String getWeapon(){return weapon;}
 }
