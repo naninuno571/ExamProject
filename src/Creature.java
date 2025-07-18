@@ -5,4 +5,3 @@ public interface Creature {
     public int getHp();
     public void setHp(int hp);
 }
-
