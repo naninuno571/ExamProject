@@ -19,5 +19,4 @@ public abstract class Character implements Creature{
     public String getName(){return name;}
     public void setName(){this.name=name;}
 
-    public abstract void attack(Creature target);
 }
