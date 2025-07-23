@@ -21,6 +21,5 @@ public abstract class Monster implements Creature{
         return hp;
     }
 
-    public abstract void attack(Creature target);
 }
 
